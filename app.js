@@ -22,11 +22,31 @@ console.log("mysql connect succesfully");
 //     `);
 
     // inserting data into table
-    // -------------await mysql_db.execute(`
-    //     insert into users(username,email) values('vinod','vinod@thapa.com')
-    //     `);
+//  await mysql_db.execute(`
+//         insert into users(username,email) values('vinod','vinod@thapa1.com')
+//         `);
 
   
     // READ 
     const [rows] = await mysql_db.execute(`select * from users`);
     console.log(rows);
+
+
+    // UPDATE
+    // try{
+    //     const [rows] = await mysql_db.execute(`update users set username = "nishita" where email='vinod@thapa.com' ` );
+    //     console.log("all users:" , rows);
+    // }catch(err){
+    //     console.error(err);
+    // }
+
+
+
+    // DELETE
+    try{
+        const [rows] = await mysql_db.execute(`Delete from users where email='vinod@thapa.com' ` );
+        console.log("all users:" , rows);
+     }catch(err){
+     console.error(err);
+     }
+
